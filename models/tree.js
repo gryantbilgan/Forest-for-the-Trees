@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const treeData = {};
+
 
 const treeSchema = new Schema({
-    leaf: {
-        enum: ['Deciduous', 'Evergreen']
-    },
-    height: Number
+    name: String,
+    scientific_name: String,
+    max_height: Number,
+    leaf: String
 });
+
+module.exports = mongoose.model('Tree', treeSchema);
