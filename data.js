@@ -14,5 +14,14 @@ exports.trees =  [
     {name: 'Bigleaf Maple', scientific_name: 'Acer Macrophyllum', max_height: 158, leaf: 'Deciduous'},
     {name: 'Pacific Dogwood', scientific_name: 'Cornus Nuttallii', max_height: 100, leaf: 'Deciduous'},
     {name: 'Pacific Madrone', scientific_name: 'Arbutus Menziesii', max_height: 131, leaf: 'Evergreen'},
-    {name: 'Oregon Ash', scientific_name: 'Fraxinus Latifolia', max_height: 111, leaf: 'Deciduous'}
+    {name: 'Oregon Ash', scientific_name: 'Fraxinus Latifolia', max_height: 111, leaf: 'Deciduous'},
+    {name: 'Western White Pine', scientific_name: 'Pinus Monticola', max_height: 225, leaf: 'Evergreen'},
+    {name: 'Lodgepole Pine', scientific_name: 'Pinus Contorta var. Latifolia', max_height: 150, leaf: 'Evergreen'},
+    {name: 'Noble Fir', scientific_name: 'Abies Procera', max_height: 295, leaf: 'Evergreen'},
+    {name: 'Grand Fir', scientific_name: 'Abies Grandis', max_height: 267, leaf: 'Evergreen'},
+    {name: 'Pacific Silver Fir', scientific_name: 'Abies Amabilis', max_height: 245, leaf: 'Evergreen'},
+    {name: 'Port Orford-Cedar', scientific_name: 'Chamaecyparis Lawsoniana', max_height: 224, leaf: 'Evergreen'},
+    {name: 'Coast Redwood', scientific_name: 'Sequoia Sempervirens', max_height: 379, leaf: 'Evergreen'},
+    {name: 'Vine Maple', scientific_name: 'Acer Circinatum', max_height: 40, leaf: 'Deciduous'},
+    {name: 'Incense-Cedar', scientific_name: 'Calocedrus Decurrens', max_height: 229, leaf: 'Evergreen'},
 ];
