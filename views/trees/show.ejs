@@ -20,7 +20,7 @@
 <form action="/trees/<%= tree._id %>/comments" method="POST">
   <label>Comment:</label>
   <input type="text-area" name="content" required>
-  <button type="submit">Add Comment</button>
+  <button type="submit">🪵</button>
 </form>
 
 <% if (tree.comments.length) { %>
@@ -42,6 +42,9 @@
             <% if (user?._id.equals(comment.user)) { %>
               <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
                 <button type="submit">🍄</button>
+              </form>
+              <form action="/comments/<%= comment._id %>/edit" method="GET">
+                <button type="submit">🌱</button>
               </form>
             <% } %>
           </td>

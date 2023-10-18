@@ -7,5 +7,9 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.post('/trees/:id/comments',ensureLoggedIn, commentsCtrl.create);
 // DELETE /trees/:id/comments
 router.delete('/comments/:id', ensureLoggedIn, commentsCtrl.delete);
+// PUT /trees/:id/comments
+router.put('/comments/:id', ensureLoggedIn, commentsCtrl.update);
+// GET /trees/:id/comments
+router.get('/comments/:id/edit', ensureLoggedIn, commentsCtrl.edit);
 
 module.exports = router;

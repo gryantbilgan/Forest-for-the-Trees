@@ -2,7 +2,9 @@ const Tree = require('../models/tree');
 
 module.exports = {
     create,
-    delete: deleteComment
+    delete: deleteComment,
+    edit,
+    update
 }
 
 async function deleteComment(req, res) {
@@ -34,3 +36,31 @@ async function create(req, res) {
     }
     res.redirect(`/trees/${tree._id}`);
 }
+
+async function edit(req, res) {
+    // Note the cool "dot" syntax to query on the property of a subdoc
+    const tree = await Tree.findOne({'comments._id': req.params.id});
+      // Find the comment subdoc using the id method on Mongoose arrays
+      // https://mongoosejs.com/docs/subdocs.html
+      const comment = tree.comments.id(req.params.id);
+      // Render the comments/edit.ejs template, passing to it the comment
+      res.render('comments/edit', { title: 'Make a New Sprout' ,tree, comment });
+  }
+
+  async function update(req, res) {
+    // Note the cool "dot" syntax to query on the property of a subdoc
+    const tree = await Tree.findOne({'comments._id': req.params.id});
+      // Find the comment subdoc using the id method on Mongoose arrays
+      // https://mongoosejs.com/docs/subdocs.html
+      const commentSubdoc = tree.comments.id(req.params.id);
+      // Ensure that the comment was created by the logged in user
+      if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/trees/${tree._id}`);
+      // Update the text of the comment
+      commentSubdoc.text = req.body.content;
+      try {
+          await tree.save();
+        } catch (err) {
+            console.log(err.message);
+        }
+        res.redirect(`/trees/${tree._id}`);
+  }
