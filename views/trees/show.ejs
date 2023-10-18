@@ -18,7 +18,7 @@
   
 <br><br><h2>Comments</h2>
 <form action="/trees/<%= tree._id %>/comments" method="POST">
-  <label>Comment:</label>
+  <label>Leaf a Comment:</label>
   <input type="text-area" name="content" required>
   <button type="submit">🪵</button>
 </form>
@@ -41,10 +41,10 @@
           <td>
             <% if (user?._id.equals(comment.user)) { %>
               <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                <button type="submit">🍄</button>
+                <button type="submit">🍄 | Decompose</button>
               </form>
               <form action="/comments/<%= comment._id %>/edit" method="GET">
-                <button type="submit">🌱</button>
+                <button type="submit">🪓 | Prune</button>
               </form>
             <% } %>
           </td>
