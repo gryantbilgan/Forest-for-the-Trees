@@ -11,6 +11,7 @@ router.get('/auth/google', passport.authenticate(
   // which passport strategy is being used?
   'google',
 {
+  // requesting the user's profile and email
   scope: ['profile', 'email'],
   // optional
   prompt: 'select_account'
@@ -26,6 +27,7 @@ router.get('/oauth2callback', passport.authenticate(
   }
 ));
 
+// OAuth logout route
 router.get('/logout', function(req, res) {
   req.logout(function() {
     res.redirect('/');

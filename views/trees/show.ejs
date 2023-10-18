@@ -11,4 +11,9 @@
     <div><%= tree.leaf %></div>
   </section>
 
+  <form action="/trees/<%= tree._id %>/comments" method="POST">
+    <input type="text-area" name="content" required>
+    <button type="submit">Submit</button>
+  </form>
+
 <%- include('../partials/footer') %>
