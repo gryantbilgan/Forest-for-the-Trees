@@ -1,10 +1,16 @@
+@font-face {
+  font-family: 'Pinewood';
+  src: url(/fonts/Pinewood.ttf);
+}
+
 * {
   background: #50C878;
   background: linear-gradient(270deg, #50C878 0%, rgba(13,215,18,1) 45%, rgba(0,212,255,1) 100%);
 }
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-family: 'Pinewood', sans-serif;
 }
 
 a {
