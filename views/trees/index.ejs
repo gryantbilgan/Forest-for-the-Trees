@@ -1,19 +1,35 @@
-<%- include('../partials/header') %> <br /><br /><br />
+<%- include('../partials/header') %>
+<br /><br /><br>
 <div class="container">
-  <table id="list" class="table table-hover">
-    <tbody>
-      <tr>
-        <td><strong>TREE-T YOURSELF</strong></td>
-        <td><strong>NETWORKS</strong></td>
-      </tr>
-      <% trees.forEach(function(tree) { %>
-      <tr>
-        <td><%= tree.name %></td>
-        <td><a href="/trees/<%= tree._id %>">FACTS</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
+  <div class="row text-center">
+    <div class="col">
+      <h2>TREE-T YOURSELF</h2>
+    </div>
+  <div class="table-container">
+    <table id="list" class="table table-hover">
+      <tbody>
+        <% var sortedTrees = trees.sort((a, b) => a.name.localeCompare(b.name)); %>
+        <% var counter = 0; %>
+        <% trees.forEach(function(tree) { %>
+          <% if (counter % 3 === 0) { %>
+            <tr>
+          <% } %>
+          <td>
+            <h4><%= tree.name %></h4>
+            <a href="/trees/<%= tree._id %>" class="btn btn-outline-light">FACTS</a>
+          </td>
+          <% if (counter % 3 === 2 || counter === trees.length - 1) { %>
+            </tr>
+          <% } %>
+          <% counter++; %>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
 <%- include('../partials/footer') %>
+
+
+
+
+

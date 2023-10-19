@@ -149,4 +149,16 @@ exports.trees = [
     max_height: 229,
     leaf: "Evergreen",
   },
+  {
+    name: "Pacific Yew",
+    scientific_name: "Taxus  Brevifolia",
+    max_height: 75,
+    leaf: "Evergreen",
+  },
+  {
+    name: "Oregon Myrtle",
+    scientific_name: "Umbellularia Californica",
+    max_height: 150,
+    leaf: "Evergreen",
+  },
 ];
