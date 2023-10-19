@@ -1,36 +1,39 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const passport = require('passport');
+const passport = require("passport");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Forest for the Trees' });
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Forest for the Trees" });
 });
 
-router.get('/auth/google', passport.authenticate(
-  // which passport strategy is being used?
-  'google',
-{
-  // requesting the user's profile and email
-  scope: ['profile', 'email'],
-  // optional
-  prompt: 'select_account'
-}
-));
+router.get(
+  "/auth/google",
+  passport.authenticate(
+    // which passport strategy is being used?
+    "google",
+    {
+      // requesting the user's profile and email
+      scope: ["profile", "email"],
+      // optional
+      prompt: "select_account",
+    }
+  )
+);
 
 // Google OAuth callback route
-router.get('/oauth2callback', passport.authenticate(
-  'google',
-  {
-    successRedirect: '/',
-    failureRedirect: '/'
-  }
-));
+router.get(
+  "/oauth2callback",
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/",
+  })
+);
 
 // OAuth logout route
-router.get('/logout', function(req, res) {
-  req.logout(function() {
-    res.redirect('/');
+router.get("/logout", function (req, res) {
+  req.logout(function () {
+    res.redirect("/");
   });
 });
 

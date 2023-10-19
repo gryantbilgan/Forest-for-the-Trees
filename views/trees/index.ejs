@@ -1,5 +1,4 @@
-<%- include('../partials/header') %>
-<br><br><br>
+<%- include('../partials/header') %> <br /><br /><br />
 <div class="container">
   <table id="list" class="test">
     <tbody>
@@ -8,10 +7,10 @@
         <td><strong>NETWORKS</strong></td>
       </tr>
       <% trees.forEach(function(tree) { %>
-        <tr>
-          <td><%= tree.name %></td>
-          <td><a href="/trees/<%= tree._id %>">FACTS</a></td>
-        </tr>
+      <tr>
+        <td><%= tree.name %></td>
+        <td><a href="/trees/<%= tree._id %>">FACTS</a></td>
+      </tr>
       <% }); %>
     </tbody>
   </table>

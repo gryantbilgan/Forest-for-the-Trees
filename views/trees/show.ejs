@@ -1,59 +1,67 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <br>
-    <div>Tree Name: </div>
-    <div><%= tree.name %></div>
-    <br>
-    <div>Scientific Name: </div>
-    <div><%= tree.scientific_name %></div>
-    <br>
-    <div>Max Height: </div>
-    <div><%= tree.max_height %>'</div>
-    <br>
-    <div>Leaf Type: </div>
-    <div><%= tree.leaf %></div>
-    <br>
+  <br />
+  <div>Tree Name:</div>
+  <div><%= tree.name %></div>
+  <br />
+  <div>Scientific Name:</div>
+  <div><%= tree.scientific_name %></div>
+  <br />
+  <div>Max Height:</div>
+  <div><%= tree.max_height %>'</div>
+  <br />
+  <div>Leaf Type:</div>
+  <div><%= tree.leaf %></div>
+  <br />
 </section>
-  
-<br><br><h2>Comments</h2>
+
+<br /><br />
+<h2>Comments</h2>
 <form action="/trees/<%= tree._id %>/comments" method="POST">
   <label>Leaf a Comment:</label>
-  <input type="text-area" name="content" required>
+  <input type="text-area" name="content" required />
   <button type="submit">🪵</button>
 </form>
 
 <% if (tree.comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% tree.comments.forEach(function(comment) { %>
-        <tr>
-          <td class="comment-user"><img alt="avatar" src="<%= comment.userAvatar %>" referrerpolicy="no-referrer" ><%= comment.userName %></td>
-          <td><%= comment.createdAt.toLocaleDateString() %></td>
-          <td><%= comment.content %></td>
-          <td>
-            <% if (user?._id.equals(comment.user)) { %>
-              <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                <button type="submit">🍄 | Decompose</button>
-              </form>
-              <form action="/comments/<%= comment._id %>/edit" method="GET">
-                <button type="submit">🪓 | Prune</button>
-              </form>
-            <% } %>
-          </td>
-        </tr>
-      <% });%>
-    </tbody>
-  </table>
-  <% } else { %>
-  <h5>No Comments Yet</h5>
-<% } %>
-
-<%- include('../partials/footer') %>
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% tree.comments.forEach(function(comment) { %>
+    <tr>
+      <td class="comment-user">
+        <img
+          alt="avatar"
+          src="<%= comment.userAvatar %>"
+          referrerpolicy="no-referrer"
+        /><%= comment.userName %>
+      </td>
+      <td><%= comment.createdAt.toLocaleDateString() %></td>
+      <td><%= comment.content %></td>
+      <td>
+        <% if (user?._id.equals(comment.user)) { %>
+        <form
+          action="/comments/<%= comment._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit">🍄 | Decompose</button>
+        </form>
+        <form action="/comments/<%= comment._id %>/edit" method="GET">
+          <button type="submit">🪓 | Prune</button>
+        </form>
+        <% } %>
+      </td>
+    </tr>
+    <% });%>
+  </tbody>
+</table>
+<% } else { %>
+<h5>No Comments Yet</h5>
+<% } %> <%- include('../partials/footer') %>
