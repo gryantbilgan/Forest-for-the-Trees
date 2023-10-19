@@ -11,6 +11,10 @@ a {
   color: #f7f8f9;
 }
 
+#list > tbody > tr > td {
+  padding: 10px;
+}
+
 .login {
   /* display: flex;
   justify-content: center;

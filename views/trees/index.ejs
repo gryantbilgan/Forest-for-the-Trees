@@ -1,18 +1,16 @@
 <%- include('../partials/header') %>
-
-<table id="list">
+<br><br><br>
+<table id="list" class="d-flex justify-content-center">
   <thead>
-    <tr>
-      <!-- <th>Title</th>
-      <th>Release<br>Year</th> -->
-      <th></th>
-    </tr>
   </thead>
   <tbody>
+    <tr>
+      <td><strong>TREE-T YOURSELF</strong></td>
+      <td><strong>NETWORKS</strong></td>
+    </tr>
     <% trees.forEach(function(tree) { %>
       <tr>
         <td><%= tree.name %></td>
-        <!-- <td><%= tree.leaf %></td> -->
         <td><a href="/trees/<%= tree._id %>">FACTS</a></td>
       </tr>
       <% }); %>
