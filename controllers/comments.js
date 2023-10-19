@@ -50,13 +50,17 @@ async function edit(req, res) {
   async function update(req, res) {
     // Note the cool "dot" syntax to query on the property of a subdoc
     const tree = await Tree.findOne({'comments._id': req.params.id});
+    console.log(tree);
       // Find the comment subdoc using the id method on Mongoose arrays
       // https://mongoosejs.com/docs/subdocs.html
       const commentSubdoc = tree.comments.id(req.params.id);
+      console.log(commentSubdoc);
       // Ensure that the comment was created by the logged in user
-      if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/trees/${tree._id}`);
-      // Update the text of the comment
-      commentSubdoc.text = req.body.content;
+      if (commentSubdoc.user._id.toString() !== req.user._id.toString()) {
+          res.redirect(`/trees/${tree._id}`);
+        } 
+          // Update the text of the comment
+      commentSubdoc.content = req.body.content;
       try {
           await tree.save();
         } catch (err) {
