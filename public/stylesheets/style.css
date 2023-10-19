@@ -56,6 +56,10 @@ a {
   background-position: center center;
 }
 
+.nav-item a {
+  margin-right: 40px;
+}
+
 /* .test::before {
   content: '';
   position: fixed;

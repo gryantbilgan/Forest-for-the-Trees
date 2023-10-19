@@ -12,5 +12,5 @@ async function index(req, res) {
 
 async function show(req, res) {
   const tree = await Tree.findById(req.params.id);
-  res.render("trees/show", { title: "Tree Detail", tree });
+  res.render("trees/show", { title: "Tree Detail Bryant", tree });
 }
