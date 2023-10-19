@@ -44,7 +44,7 @@ a {
   height: 34px;
 }
 
-.test {
+.table-hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
