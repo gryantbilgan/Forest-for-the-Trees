@@ -11,6 +11,12 @@ a {
   color: #f7f8f9;
 }
 
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #list > tbody > tr > td {
   padding: 10px;
 }
@@ -24,4 +30,8 @@ a {
 
 .login img {
   height: 30px;
+}
+
+.google {
+  height: 34px;
 }
