@@ -124,7 +124,8 @@ exports.trees = [
     scientific_name: "Fraxinus Latifolia",
     max_height: 111,
     leaf: "Deciduous",
-    fun_fact: "It is the only ash native to the Pacific Northwest. On June 30, 2022 the Emerald Ash Borer beetle was discovered in Forest Grove, Oregon, marking the first confirmation of the invasive pest on the West Coast. This pest has proven deadly to all ash species in North America and Europe, including the native Oregon ash (Fraxinus latifolia). The emerald ash borer (EAB) is an invasive insect from Asia. It was first found in the United States in 2002. It has now spread across the eastern U.S. and as far west as Colorado, and has killed hundreds of millions of ash trees. EAB is spread primarily by the transport of nursery stock and firewood. It has been found in Oregon, and all ash trees in Oregon cities and forests are at risk",
+    fun_fact:
+      "It is the only ash native to the Pacific Northwest. On June 30, 2022 the Emerald Ash Borer beetle was discovered in Forest Grove, Oregon, marking the first confirmation of the invasive pest on the West Coast. This pest has proven deadly to all ash species in North America and Europe, including the native Oregon ash (Fraxinus latifolia). The emerald ash borer (EAB) is an invasive insect from Asia. It was first found in the United States in 2002. It has now spread across the eastern U.S. and as far west as Colorado, and has killed hundreds of millions of ash trees. EAB is spread primarily by the transport of nursery stock and firewood. It has been found in Oregon, and all ash trees in Oregon cities and forests are at risk",
   },
   {
     name: "Western White Pine",
