@@ -33,15 +33,11 @@ a {
 }
 
 .login {
-  height: 34px;
-}
-
-.login img {
   height: 30px;
 }
 
 .google {
-  height: 34px;
+  height: 20px;
 }
 
 .table-hover {
