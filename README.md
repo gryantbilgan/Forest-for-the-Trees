@@ -1,1 +1,3 @@
-# Project2-Forest-for-the-Trees
+<div align="center">
+
+<img src="/images/Woodland.jpeg" width="30%" height="15%" />
