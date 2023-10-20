@@ -15,15 +15,15 @@
   </head>
   <body>
     <ul class="nav justify-content-between">
+      <% if (user) { %>
+      <li class="nav-item">
+        <a class="nav-link active btn btn-outline-success" href="/logout">LOG OUT</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link active btn btn-outline-success" aria-current="page" href="/">TRUNK</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active btn btn-outline-success" href="/trees">BRANCHES</a>
-      </li>
-      <% if (user) { %>
-      <li class="nav-item">
-        <a class="nav-link active btn btn-outline-success" href="/logout">LOG OUT</a>
       </li>
       <% } else { %>
       <li class="nav-item">
