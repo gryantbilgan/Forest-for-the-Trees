@@ -25,6 +25,7 @@ const treeSchema = new Schema({
   scientific_name: String,
   max_height: Number,
   leaf: String,
+  fun_fact: String,
   comments: [commentSchema],
 });
 
