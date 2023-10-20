@@ -56,8 +56,8 @@ a {
   background-position: center center;
 }
 
-.nav-item a {
-  margin-right: 40px;
+#openModal {
+  margin-top: 60px;
 }
 
 /* .test::before {
