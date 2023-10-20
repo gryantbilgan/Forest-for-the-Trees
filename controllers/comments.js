@@ -30,13 +30,10 @@ async function create(req, res) {
   req.body.userAvatar = req.user.avatar;
   // Push the subdocs into Mongoose arrays
   tree.comments.push(req.body);
-  console.log(req.body);
   try {
     // save any changes made to the tree doc
     await tree.save();
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
   res.redirect(`/trees/${tree._id}`);
 }
 
@@ -53,11 +50,9 @@ async function edit(req, res) {
 async function update(req, res) {
   // Note the cool "dot" syntax to query on the property of a subdoc
   const tree = await Tree.findOne({ "comments._id": req.params.id });
-  console.log(tree);
   // Find the comment subdoc using the id method on Mongoose arrays
   // https://mongoosejs.com/docs/subdocs.html
   const commentSubdoc = tree.comments.id(req.params.id);
-  console.log(commentSubdoc);
   // Ensure that the comment was created by the logged in user
   if (commentSubdoc.user._id.toString() !== req.user._id.toString()) {
     res.redirect(`/trees/${tree._id}`);
@@ -66,8 +61,6 @@ async function update(req, res) {
   commentSubdoc.content = req.body.content;
   try {
     await tree.save();
-  } catch (err) {
-    console.log(err.message);
-  }
+  } catch (err) {}
   res.redirect(`/trees/${tree._id}`);
 }

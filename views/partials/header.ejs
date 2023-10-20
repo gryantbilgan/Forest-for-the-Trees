@@ -17,17 +17,29 @@
     <ul class="nav justify-content-between">
       <% if (user) { %>
       <li class="nav-item">
-        <a class="nav-link active btn btn-outline-success" href="/logout">LOG OUT</a>
+        <a class="nav-link active btn btn-outline-success" href="/logout"
+          >LOG OUT</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link active btn btn-outline-success" aria-current="page" href="/">TRUNK</a>
+        <a
+          class="nav-link active btn btn-outline-success"
+          aria-current="page"
+          href="/"
+          >TRUNK</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link active btn btn-outline-success" href="/trees">BRANCHES</a>
+        <a class="nav-link active btn btn-outline-success" href="/trees"
+          >BRANCHES</a
+        >
       </li>
       <% } else { %>
       <li class="nav-item">
-        <a class="nav-link active btn btn-outline-success" href="/auth/google" class="login"
+        <a
+          class="nav-link active btn btn-outline-success"
+          href="/auth/google"
+          class="login"
           >LOG IN&nbsp;<img
             src="https://i.imgur.com/FHjYyi0.png"
             class="google"
@@ -35,6 +47,3 @@
       </li>
       <% } %>
     </ul>
-
-    
-    

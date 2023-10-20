@@ -112,12 +112,10 @@ If the user has edited their comment, it will be updated and shown.
 // Function to insert seed data into the database
 const seedDatabase = async () => {
   try {
-    console.log(data);
     // Remove existing tree data
     await Tree.deleteMany({});
     // Insert the seed data
     await Tree.create(data.trees);
-    console.log("Seed data inserted successfully");
   } catch (error) {
     console.error("Error inserting seed data:", error);
   }
