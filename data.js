@@ -117,7 +117,7 @@ exports.trees = [
     max_height: 131,
     leaf: "Evergreen",
     fun_fact:
-      "Native American tribes of the Pacific Northwest had multiple uses; its berries made cider, were strung for necklaces, and used as bait for steelhead fishing. Its bark made a medicinal tea to wash sores, and treat colds and sore throats. Chewing its leaves treted cramps and stomach aches.",
+      "Native American tribes of the Pacific Northwest had multiple uses; its berries made cider, were strung for necklaces, and used as bait for steelhead fishing. Its bark made a medicinal tea to wash sores, and treat colds and sore throats. Chewing its leaves treated cramps and stomach aches.",
   },
   {
     name: "Oregon Ash",
